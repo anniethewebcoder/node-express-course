@@ -1,3 +1,5 @@
-const myName = "Annie"
-const myProgram = "Code the Dream"
-const myGame = "Erno Rubik"
+const shane = "Snnie"
+const sebastian = "Sebastian"
+const sam = "Sam"
+
+module.exports = { shane, sebastian, sam }
