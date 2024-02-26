@@ -1,8 +1,8 @@
-const num1 = 5
-const num2 = 10
+const damage = Math.floor(Math.random() * 9) + 4
+const frequency = 2
 
-function addValues() {
-    console.log(`the sume is : ${num1 + num2}`)
+function damageValue() {
+    console.log(`The damage dealt is per second: ${damage + frequency}`)
 }
 
-addValues()
+damageValue()

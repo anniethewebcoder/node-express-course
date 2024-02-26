@@ -1,4 +1,4 @@
-const shane = "Snnie"
+const shane = "Shane"
 const sebastian = "Sebastian"
 const sam = "Sam"
 

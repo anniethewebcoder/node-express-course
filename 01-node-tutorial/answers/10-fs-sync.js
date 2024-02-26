@@ -1,8 +1,7 @@
 const { readFileSync, writeFileSync } = require('fs')
 
-const first = readFileSync('./content/first.txt', 'utf8')
-const second = readFileSync('./content/second.txt', 'utf8')
+const fileA = readFileSync('./temporary/fileA.txt', 'utf8')
 
-console.log(first, second)
+console.log(fileA)
 
-writeFileSync('./content/result-sync.txt', `Here is the result: ${first}`, {flag: 'a'})
+const farming = writeFileSync('./temporary/farming-sync.txt', `Farming: ${fileA}`, {flag: 'a'})
