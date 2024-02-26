@@ -21,19 +21,37 @@ const getBody = (req, callback) => {
 };
 
 // here, you could declare one or more variables to store what comes back from the form.
-let item = "Enter something below.";
+let arr = []
+let item = "Choose a crop to buy and quantity"
+let cost = 0
+let quantity = 0
 
 // here, you can change the form below to modify the input fields and what is displayed.
 // This is just ordinary html with string interpolation.
 const form = () => {
   return `
+  <!DOCTYPE html>
+  <html>
+  <head><meta charset="UTF-8"></head>
   <body>
   <p>${item}</p>
+  <p>${cost}g X ${quantity} packets = ${cost*quantity}g</p>
   <form method="POST">
-  <input name="item"></input>
-  <button type="submit">Submit</button>
+    <label for="crops">Choose a crop seed to buy:</label>
+      <select id="crops" name="crops">
+        <option value="Parsnip Seeds,20">Parsnip Seeds (20g)</option>
+        <option value="Bean Starter,60">Bean Starter (60g)</option>
+        <option value="Cauliflower Seeds,80">Cauliflower Seeds (80g)</option>
+        <option value="Rice Shoots,40">Rice Shoots (40g)</option>
+        <option value="Potato Seeds,50">Potato Seeds (50g)</option>
+        <option value="Kale Seeds,70">Kale Seeds (70g)</option>
+      </select>
+    <label for="quantity">Quantity: </label>
+    <input type="number" id="quantity" name="quantity" min="0" value="0">
+    <button type="submit">Submit</button>
   </form>
   </body>
+  </html>
   `;
 };
 
@@ -44,8 +62,11 @@ const server = http.createServer((req, res) => {
     getBody(req, (body) => {
       console.log("The body of the post is ", body);
       // here, you can add your own logic
-      if (body["item"]) {
-        item = body["item"];
+      if (body["crops"]) {
+        arr = body["crops"].split("%2C");
+        item = arr[0].replace("+", " ")
+        cost = parseInt(arr[1])
+        quantity = parseInt(body["quantity"])
       } else {
         item = "Nothing was entered.";
       }
