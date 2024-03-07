@@ -82,7 +82,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.on("request", (req) => {
-  console.log("evemt received: ", req.method, req.url)
+  console.log("event received: ", req.method, req.url)
 })
 
 server.listen(3000);
