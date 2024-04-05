@@ -69,12 +69,28 @@ app.get('/api/v1/query', (req, res) => {
     res.status(200).json(sortedProducts)
 })
 
+app.use('/api/v1/people', peopleRouter)
+
 app.get('/api/v1/people', (req, res) => {
     res.json(people)
 })
 
 app.post('/api/v1/people', (req, res) => {
-
+    if(!people) {
+        res.status(400).json({
+            success: false, 
+            message: "Please provide a name"
+        })
+    } else {
+        people.push({
+            id: people.length + 1,
+            name: req.body.name
+        })
+        res.status(201).json({
+            success: true,
+            name: req.body.name
+        })
+    }
 })
 
 app.all('*', (req, res) => {
