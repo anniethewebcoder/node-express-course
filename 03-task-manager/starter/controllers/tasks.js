@@ -1,15 +1,15 @@
-const express = require('express')
-
 const getAllTasks = (req, res) => {
     res.send('GET ALL TASKS')
 }
 
 const createTask = (req, res) => {
-    res.send('CREATE TASK')
+    res.json(req.body)
 }
 
 const getTask = (req, res) => {
-    res.send('GET A TASK')
+    res.json({
+        name: req.params
+    })
 }
 
 const updateTask = (req, res) => {

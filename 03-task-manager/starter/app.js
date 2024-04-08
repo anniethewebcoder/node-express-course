@@ -1,9 +1,15 @@
+require('./db/connect')
+
 const express = require('express')
 const app = express()
+const tasksRouter = require('./routes/tasks')
+const { getAllTasks, getTask } = require('./controllers/tasks')
 
-app.get('/', (req, res) => {
-    res.send(`<h1>Task Manager App</h1>`)
-})
+// app.get('/', (req, res) => {
+//     res.send(`<h1>Task Manager App</h1>`)
+// })
+
+app.use('/api/v1/tasks', tasksRouter)
 
 // app.get('/api/v1/tasks')
 // app.post('/api/v1/tasks')
