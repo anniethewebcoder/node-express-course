@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const { BadRequestError } = require('../errors')
 
 const logon = async(req, res) => {
     const {
@@ -7,8 +8,10 @@ const logon = async(req, res) => {
     } = req.body
 
     if(!name || !password) {
-        console.log('Please provide email and password')
+        throw new BadRequestError('Please provide name and password')
     }
+
+    const id = new Date().getDate()
 
     const token = jwt.sign({
         id,
@@ -42,7 +45,8 @@ const hello = async(req, res) => {
         "Penny"
     ]
 
-    const luckyNumber = Math.floor(Math.random()*11)
+    const luckyNumber = Math.floor(Math.random()*12)
+    const villager = villagers[luckyNumber]
     console.log(luckyNumber)
 
     res.status(200).json({

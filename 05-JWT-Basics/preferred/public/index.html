@@ -13,27 +13,35 @@
                 <h3>- Dating app for serious farmers -</h3>
             </header>
 
-            <form>
+            <form class="form">
                 <div>
                     <img src="./assets/girlfriend.png" alt="girlfriend profile" />
                 </div>
                 <div>
                     <label>Name: </label>
-                    <input type="text" />
+                    <input type="text" class="name-input"/>
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input type="password" />
+                    <input type="password" class="password-input"/>
                 </div>
                 <div>
+                    <div class="form-alert">There was an error.</div>
                     <button type="sumbit">Logon</button>
                 </div>
-
             </form>
+            <div class="result"></div>
             <footer>
                 <p>&copy; PT Villagers, Inc. Made by Annie Kwon. </p>
                 <p>*Names and images of Stardew Valley are by ConcernedApe*</p>
             </footer>
         </main>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="./browser-app.js"></script>
     </body>
 </html>
