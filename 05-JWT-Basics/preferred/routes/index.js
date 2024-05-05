@@ -6,7 +6,9 @@ const {
     hello
 } = require('../controllers')
 
-router.route('/hello').get(hello)
+const authenticationMiddleware = require('../middleware/authentication')
+
+router.route('/hello').get(authenticationMiddleware, hello)
 router.route('/logon').post(logon)
 
 module.exports = router
