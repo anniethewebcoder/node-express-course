@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+.special-elite-regular {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+  
+html {
+    margin: 0;
+    padding: 0;
+    font-family: "Special Elite", 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./assets/stardewbackground.png');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+main {
+    margin: 0 auto;
+    width: 960px;
+    background-color: white;
+    opacity: 80%;
+    text-align: center;
+    height: 100vh;
+}
+
+header {
+    margin-bottom: 2em;
+}
+
+h1 {
+    margin: 0;
+    padding-top: 1em;
+}
+
+form {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: start;
+}
+
+form img {
+    border: 2px solid #04AA6D;
+    border-radius: 50%;
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form > div {
+    margin: 15px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    margin: 4px 0;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
