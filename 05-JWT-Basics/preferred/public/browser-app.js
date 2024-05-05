@@ -1,5 +1,5 @@
 const formDOM = document.querySelector('.form')
-const usernameInputDOM = document.querySelector('.name-input')
+const nameInputDOM = document.querySelector('.name-input')
 const passwordInputDOM = document.querySelector('.password-input')
 const formAlertDOM = document.querySelector('.form-alert')
 const resultDOM = document.querySelector('.result')
@@ -11,17 +11,17 @@ formDOM.addEventListener('submit', async (e) => {
   tokenDOM.classList.remove('text-success')
 
   e.preventDefault()
-  const username = usernameInputDOM.value
+  const name = nameInputDOM.value
   const password = passwordInputDOM.value
 
   try {
-    const { data } = await axios.post('/api/v1/logon', { username, password })
+    const { data } = await axios.post('/api/v1/logon', { name, password })
 
     formAlertDOM.style.display = 'block'
     formAlertDOM.textContent = data.msg
 
     formAlertDOM.classList.add('text-success')
-    usernameInputDOM.value = ''
+    nameInputDOM.value = ''
     passwordInputDOM.value = ''
 
     localStorage.setItem('token', data.token)
@@ -49,7 +49,11 @@ btnDOM.addEventListener('click', async () => {
         Authorization: `Bearer ${token}`,
       },
     })
-    resultDOM.innerHTML = `<h5>${data.msg}</h5><p>${data.secret}</p>`
+    resultDOM.innerHTML = `
+        <h3>${data.msg}!</h3>
+        <p>${data.secret}</p>
+        <p><img src="assets/${data.img}" alt="${data.img}" /></p>
+    `
 
     data.secret
   } catch (error) {

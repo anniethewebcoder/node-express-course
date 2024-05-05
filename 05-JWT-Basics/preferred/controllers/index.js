@@ -47,11 +47,11 @@ const hello = async(req, res) => {
 
     const luckyNumber = Math.floor(Math.random()*12)
     const villager = villagers[luckyNumber]
-    console.log(luckyNumber)
 
     res.status(200).json({
         msg: `Hello, ${req.user.name}`,
-        secret: `Here is your marriage candidate ${villager}`
+        secret: `Your love match is ${villager}. Let's go get a bouquet!`,
+        img: `${villager}.png`
     })
 }
 
